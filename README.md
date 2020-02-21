@@ -35,17 +35,17 @@ brew update && brew install git terraform azure-cli kubectl helm
 # Azure Pre-Requisites
 Terraform's Azure provider expects that you have the following environment variables set:
 
-export ARM_SUBSCRIPTION_ID="<your-subscriptionId-here>"
-export ARM_CLIENT_ID="<your-appID/client_id-here>"
-export ARM_CLIENT_SECRET="<your-password/client_secret-here>"
-export ARM_TENANT_ID="<your-tenantId-here>"
+- export ARM_SUBSCRIPTION_ID="<your-subscriptionId-here>"
+- export ARM_CLIENT_ID="<your-appID/client_id-here>"
+- export ARM_CLIENT_SECRET="<your-password/client_secret-here>"
+- export ARM_TENANT_ID="<your-tenantId-here>"
 
-The ARM_SUBSCRIPTION_ID is the UUID of the Azure Subscription in which you are working.
-The ARM_TENANT_ID is the UUID of the current Azure Active Directory in which you are working. 
-The ARM_CLIENT_ID is the (UUID-based) Application ID (aka: client_id) of the service principal that terraform will use to create resources.
-The ARM_CLIENT_SECRET is a (UUID-based) password for the service principal that terraform will use to create resources.
+The ARM_SUBSCRIPTION_ID is the UUID of the Azure Subscription in which you are working.\s\s
+The ARM_TENANT_ID is the UUID of the current Azure Active Directory in which you are working.\s\s 
+The ARM_CLIENT_ID is the (UUID-based) Application ID (aka: client_id) of the service principal that terraform will use to create resources.\s\s
+The ARM_CLIENT_SECRET is a (UUID-based) password for the service principal that terraform will use to create resources.\s\s
 
-To obtain the above information via azure-cli, use the following commands:
+To obtain the above information via azure-cli, use the following commands:\s\s
 Login to Azure:
 ```
 az login
@@ -97,6 +97,12 @@ kubectl cluster-info
 kubectl get nodes
 ```
 
+# Access the Kubernetes Dashboard
+Start the kubectl proxy
+```
+kubectl proxy
+```
+Open a browser to:  'http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/#!/overview?namespace=default'
 
 # Cleaning up
 After you've finished with your cluster, you can destroy/delete it (to keep your Azure bill as low as possible)
