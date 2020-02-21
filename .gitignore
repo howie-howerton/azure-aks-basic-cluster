@@ -1,0 +1,6 @@
+info.txt
+.terraform*
+terraform.tfvars
+terraform.*
+todo.txt
+azurek8s
