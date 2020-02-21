@@ -25,7 +25,8 @@ export KUBECONFIG=./azurek8s
 - terraform v0.12+  
 - azure-cli 2.0+
 - kubectl v1.15+    
-- helm v3.0+        
+- helm v3.0+
+
 On a MBP, you can easily install all of these pre-requisites with:
 ```
 brew update && brew install git terraform azure-cli kubectl helm
@@ -40,10 +41,10 @@ Terraform's Azure provider expects that you have the following environment varia
 - export ARM_CLIENT_SECRET="<your-password/client_secret-here>"
 - export ARM_TENANT_ID="<your-tenantId-here>"
 
-The ARM_SUBSCRIPTION_ID is the UUID of the Azure Subscription in which you are working.\s\s
-The ARM_TENANT_ID is the UUID of the current Azure Active Directory in which you are working.\s\s 
-The ARM_CLIENT_ID is the (UUID-based) Application ID (aka: client_id) of the service principal that terraform will use to create resources.\s\s
-The ARM_CLIENT_SECRET is a (UUID-based) password for the service principal that terraform will use to create resources.\s\s
+The ARM_SUBSCRIPTION_ID is the UUID of the Azure Subscription in which you are working.  
+The ARM_TENANT_ID is the UUID of the current Azure Active Directory in which you are working.   
+The ARM_CLIENT_ID is the (UUID-based) Application ID (aka: client_id) of the service principal that terraform will use to create resources.  
+The ARM_CLIENT_SECRET is a (UUID-based) password for the service principal that terraform will use to create resources.  
 
 To obtain the above information via azure-cli, use the following commands:\s\s
 Login to Azure:
